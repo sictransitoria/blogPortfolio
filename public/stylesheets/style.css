@@ -1,0 +1,25 @@
+body {
+	font-family: Avenir Next, Helvetica, sans-serif;
+
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	margin: 10px 60px 10px 60px;
+
+}
+
+h1 {
+	font-weight: 800;
+	font-size: 40px;
+	text-align: center;
+	margin: 50px 0px 50px 0px;
+
+}
+
+img {
+	margin: 0 auto;
+	width: 100%;
+
+}
