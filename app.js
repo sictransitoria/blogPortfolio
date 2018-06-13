@@ -20,12 +20,13 @@ const connectionString = 'postgresql://postgres:Runner4life!@localhost:5432/bigw
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+
 // View Engine Setup
 app.use(express.static('Public'));
 app.set('view engine', 'ejs');
 
 
-// ************************ // 
+// Routes 
 
 // GET
 app.get('/', (req, res) => {
@@ -43,6 +44,20 @@ app.get('/', (req, res) => {
     .then((result) => {
     return res.render('posts', {result})
   
+  })
+
+});
+
+// GET ADD
+app.get('/add', (req, res) => {
+  const client = new Client({
+    connectionString: connectionString,
+  
+  })
+
+  client.connect()
+  .then(() => {
+    return res.render('add')
   })
 
 });
@@ -68,7 +83,7 @@ app.post('/add', (req, res) => {
 });
 
 // Edit
-app.get('/edit/posts/:id', (req, res) => {
+app.get('/edit/blogposts/:id', (req, res) => {
   const client = new Client({
     connectionString: connectionString,
 
@@ -81,7 +96,7 @@ app.get('/edit/posts/:id', (req, res) => {
   })
   
     .then((result) => {
-    return res.render('/', {result});
+    return res.render('edit-blog', {result});
  
   })
 
@@ -108,7 +123,7 @@ app.post('/update', (req, res) => {
 });
 
 // Delete
-app.post('/delete/posts/:id', (req, res) => {
+app.post('/delete/blogposts/:id', (req, res) => {
   const client = new Client({
   	connectionString: connectionString,
 
