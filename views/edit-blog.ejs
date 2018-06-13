@@ -5,13 +5,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <title>Edit Your Blog Post</title>
 </head>
 <body>
     <div class="flex-container">
+    <header>
+        <% include ./partials/header %>
+    </header>
     <form method="POST" action="/update">
         <h1>Need to make a change?</h1>
         <h1 id="strongH1"><strong> Make an Update.</strong></h1>
@@ -25,6 +28,9 @@
         </div>
             <button class="btn-submit"> SUBMIT </button>
     </form>
+    <footer>
+        <% include ./partials/footer %>
+    </footer>
     </div>
 </body>
 </html>
